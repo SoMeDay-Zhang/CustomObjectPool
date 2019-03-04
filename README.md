@@ -34,7 +34,7 @@ public interface IAccessMode<T>
 ```
 
 #### 2. 实现存取策略
-#####FIFO
+##### FIFO
 FIFO通过Queue实现，[参考](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=netcore-2.2)
 ```csharp
 public sealed class FIFOAccessMode<T> : Queue<T>, IAccessMode<T>
@@ -79,7 +79,7 @@ public sealed class FIFOAccessMode<T> : Queue<T>, IAccessMode<T>
     }
 }
 ```
-#####LIFO
+##### LIFO
 在LIFO中借助Stack特性实现进栈出栈，因此该策略继承自Stack，[参考](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=netcore-2.2)
 ```csharp
 public sealed class LIFOAccessModel<T> : Stack<T>, IAccessMode<T>
@@ -127,7 +127,7 @@ public sealed class LIFOAccessModel<T> : Stack<T>, IAccessMode<T>
 
 **注意**：以上两个实现都遵循池容量不变原则，但租用的实例可以超过对象池大小，返还时还将检测该实例直接释放还是进入池中。而如何控制池大小和并发将在下面说明。
 
-####3.Pool实现
+#### 3.Pool实现
 ```csharp
 public class Pool<T> : IDisposable where T : IDisposable
 {
