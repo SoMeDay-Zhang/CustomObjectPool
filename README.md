@@ -250,4 +250,7 @@ public Student NewStudent()
 
 **总结**：至此，一个完整的对象池建立完毕。
 
->
+**安装与使用**：现已发布到NuGet服务器，可在程序包管理控制台中输入安装命令使用。
+```
+Install-Package CustomObjectPool
+```
